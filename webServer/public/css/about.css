@@ -1,11 +1,44 @@
 body {
-  display: grid;
-  justify-content: center;
+  color: #333333;
+  font-family: Arial, Helvetica, sans-serif;
 }
+.general {
+  display: grid;
+  place-items: center;
+  grid-template-rows: 1fr;
+  grid-template-columns: 1fr;
+}
+
 img {
-  width: 200px;
-  height: 200px;
+  padding: 20px;
+  height: 250px;
+  width: 250px;
+}
+footer {
+  margin-top: 16px;
+  padding: 20px;
+  color: #999494;
+  border-top: 1px solid #eeeeee;
+}
+header {
+  margin-bottom: 16px;
 }
 h1 {
-  color: red;
+  font-size: 64px;
+}
+header a {
+  color: #888888;
+  margin-right: 16px;
+  text-decoration: none;
+}
+input {
+  border: 1px solid #cccccc;
+  padding: 8px;
+}
+button {
+  cursor: pointer;
+  border: 1px solid #888888;
+  background: #888888;
+  color: white;
+  padding: 8px;
 }
