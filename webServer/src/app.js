@@ -42,15 +42,20 @@ app.get("/Weather", (req, res) => {
         error,
       });
     }
-    console.log("latitude is ", latitude);
-    console.log("longitude is", longitude);
-    console.log("place is ", place);
-    forecast(latitude, longitude, (error, forecastData) => {
+    // console.log("latitude is ", latitude);
+    // console.log("longitude is", longitude);
+    // console.log("place is ", place);
+    forecast(latitude, longitude, (error, forecastData = ({} = {})) => {
       if (error) {
+        console.log("error is ", error);
         return res.send({ error });
       }
+      console.log(typeof forecastData);
+      console.log("forecastData is ", forecastData);
+      console.log("place is ", place);
+      console.log("req.query.address is ", req.query.address);
       res.send({
-        forecast: forecastData,
+        forecast: forecastData.replace("undefined ", ""),
         place,
         address: req.query.address,
       });
